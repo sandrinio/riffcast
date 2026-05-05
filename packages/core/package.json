@@ -1,0 +1,16 @@
+{
+  "name": "@riffcast/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RiffCast core engine — brief parsing, vocabulary loading, render orchestration.",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

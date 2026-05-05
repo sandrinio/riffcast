@@ -1,0 +1,24 @@
+{
+  "name": "@riffcast/demo-meta",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Meta-demo — 10-second Remotion animation explaining what RiffCast does. The README hero candidate.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render MetaDemo out/meta-demo.mp4",
+    "render:gif": "remotion render MetaDemo out/meta-demo.gif --codec=gif",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}

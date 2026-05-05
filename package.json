@@ -1,0 +1,27 @@
+{
+  "name": "riffcast",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plug a design skill into any AI agent — produce finished animations, decks, and infographics from a one-sentence brief. Code-driven, no GUI.",
+  "license": "MIT",
+  "author": "sandrinio",
+  "homepage": "https://riffcast.soula.ge",
+  "repository": "github:sandrinio/riffcast",
+  "workspaces": [
+    "packages/*",
+    "demos/*"
+  ],
+  "scripts": {
+    "typecheck": "bun run --filter '*' typecheck",
+    "build": "bun run --filter '*' build",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@riffcast/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RiffCast CLI — `riffcast` command-line entry point.",
+  "license": "MIT",
+  "bin": {
+    "riffcast": "./src/index.ts"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@riffcast/core": "workspace:*"
+  }
+}
