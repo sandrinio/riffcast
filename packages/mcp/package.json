@@ -10,7 +10,14 @@
   },
   "main": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "bun": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./server": {
+      "bun": "./src/server.ts",
+      "default": "./src/server.ts"
+    }
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

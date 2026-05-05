@@ -16,6 +16,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@riffcast/core": "workspace:*"
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@riffcast/core": "workspace:*",
+    "@riffcast/mcp": "workspace:*",
+    "@riffcast/skill": "workspace:*"
   }
 }

@@ -30,7 +30,10 @@
         "riffcast": "./src/index.ts",
       },
       "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.29.0",
         "@riffcast/core": "workspace:*",
+        "@riffcast/mcp": "workspace:*",
+        "@riffcast/skill": "workspace:*",
       },
     },
     "packages/core": {
