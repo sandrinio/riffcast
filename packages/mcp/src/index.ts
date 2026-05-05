@@ -1,4 +1,7 @@
 #!/usr/bin/env bun
-import { VERSION } from "@riffcast/core";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { buildServer } from "./server.ts";
 
-console.error(`@riffcast/mcp v${VERSION} — stdio MCP server, under construction`);
+const server = buildServer();
+const transport = new StdioServerTransport();
+await server.connect(transport);

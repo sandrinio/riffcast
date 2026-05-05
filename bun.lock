@@ -50,6 +50,7 @@
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
         "@riffcast/core": "workspace:*",
+        "@riffcast/skill": "workspace:*",
         "zod": "^3.23.0",
       },
     },
