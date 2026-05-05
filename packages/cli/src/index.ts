@@ -3,6 +3,9 @@ import { parseArgs } from "./parser.ts";
 import { printCommandHelp, printHelp, printVersion } from "./help.ts";
 import { skillCommand } from "./commands/skill.ts";
 import { mcpCommand } from "./commands/mcp.ts";
+import { renderCommand } from "./commands/render.ts";
+import { reviewCommand } from "./commands/review.ts";
+import { doctorCommand } from "./commands/doctor.ts";
 
 async function main(): Promise<number> {
   const args = parseArgs(process.argv.slice(2));
@@ -27,10 +30,13 @@ async function main(): Promise<number> {
     case "mcp":
       return mcpCommand(args);
     case "render":
+      return renderCommand(args);
     case "review":
-    case "init":
+      return reviewCommand(args);
     case "doctor":
-      process.stderr.write(`riffcast: "${args.command}" not yet implemented in this build.\n`);
+      return doctorCommand(args);
+    case "init":
+      process.stderr.write("riffcast: \"init\" not yet implemented in this build.\n");
       return 2;
     default:
       process.stderr.write(`riffcast: unknown command "${args.command}". Run \`riffcast --help\`.\n`);
