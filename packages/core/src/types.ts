@@ -103,3 +103,42 @@ export type RenderError = {
 export type RenderResult =
   | { ok: true; outputPath: string; outputDir: string; durationMs: number }
   | { ok: false; error: RenderError };
+
+export const DIMENSION_NAMES = [
+  "composition",
+  "color",
+  "typography",
+  "motion",
+  "substance",
+] as const;
+export type DimensionName = (typeof DIMENSION_NAMES)[number];
+
+export type DimensionScoreValue = 1 | 2 | 3 | 4 | 5;
+
+export type DimensionScore = {
+  dimension: DimensionName;
+  score: DimensionScoreValue;
+  suggestion: string;
+};
+
+export type Verdict = "ship" | "iterate";
+
+export type Review = {
+  artifact_path: string;
+  reviewed_at: string;
+  scores: DimensionScore[];
+  overall_verdict: Verdict;
+};
+
+export type ReviewParseError = {
+  field: string;
+  reason: string;
+};
+
+export type ReviewParseResult =
+  | { ok: true; review: Review }
+  | { ok: false; errors: ReviewParseError[] };
+
+export type VerdictThreshold = {
+  min: DimensionScoreValue;
+};
