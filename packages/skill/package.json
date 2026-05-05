@@ -6,11 +6,13 @@
   "license": "MIT",
   "files": [
     "SKILL.md",
+    "INSTALL.md",
     "references/",
     "templates/"
   ],
   "exports": {
     "./SKILL.md": "./SKILL.md",
+    "./INSTALL.md": "./INSTALL.md",
     "./references/*": "./references/*",
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
