@@ -13,7 +13,9 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "bun run scripts/build.ts",
+    "build:host": "bun run scripts/build.ts --target=bun-darwin-arm64"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
