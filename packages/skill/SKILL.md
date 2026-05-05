@@ -1,3 +1,8 @@
+---
+name: riffcast
+description: Generate finished design artifacts from a one-sentence brief — animations in v0.1 (Remotion → MP4/GIF), with infographics, decks, and prototypes on the roadmap. Trigger when the user asks to make, create, design, render, or build a structured design output like a launch animation, hype reel, explainer, tutorial, social clip, or loop. Skip for general image generation, logo/branding, or copywriting.
+---
+
 # RiffCast Skill
 
 > Plug a design skill into your agent. Produce finished animations (v0.1), infographics (v0.2), decks (v0.3), prototypes (v0.4+) from a one-sentence brief. Code-driven, no GUI.

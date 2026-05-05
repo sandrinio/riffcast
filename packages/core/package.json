@@ -1,6 +1,6 @@
 {
   "name": "@riffcast/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "RiffCast core engine — brief parsing, vocabulary loading, render orchestration.",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "@riffcast/skill",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RiffCast markdown skill bundle — SKILL.md + references for agent-skill-capable runtimes (Claude Code, Cursor, OpenCode, Trae).",
   "license": "MIT",
   "publishConfig": {

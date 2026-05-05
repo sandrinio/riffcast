@@ -1,6 +1,6 @@
 {
   "name": "@riffcast/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "RiffCast MCP server — exposes plan/render/review as MCP tools over stdio.",
   "license": "MIT",
