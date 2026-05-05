@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, isAbsolute, join, resolve } from "node:path";
 import { z } from "zod";
 import { parseReview, verdict } from "@riffcast/core";
-import { errorResult, msg } from "./_shared.ts";
+import { errorResult, msg, okResult } from "./_shared.ts";
 
 export const reviewToolName = "riffcast_review";
 export const reviewToolDescription =
@@ -59,5 +59,5 @@ export async function reviewHandler(args: ReviewArgs) {
     summary,
   ].join("\n");
 
-  return { content: [{ type: "text" as const, text }] };
+  return okResult(text);
 }

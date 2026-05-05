@@ -3,7 +3,7 @@ import { dirname, isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import { loadVocabulary, parseBrief, VOCABULARY_NAMES } from "@riffcast/core";
-import { errorResult, msg } from "./_shared.ts";
+import { errorResult, msg, okResult } from "./_shared.ts";
 
 export const proposeDirectionsToolName = "riffcast_propose_directions";
 export const proposeDirectionsToolDescription =
@@ -71,7 +71,7 @@ export async function proposeDirectionsHandler(args: Args) {
     ),
   ].join("\n");
 
-  return { content: [{ type: "text" as const, text }] };
+  return okResult(text);
 }
 
 function resolveDefaultVocabRoot(): string {

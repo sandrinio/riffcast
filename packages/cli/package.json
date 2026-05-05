@@ -7,6 +7,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "src",
+    "scripts",
+    "README.md",
+    "tsconfig.json"
+  ],
   "bin": {
     "riffcast": "./src/index.ts"
   },

@@ -2,7 +2,7 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
-import { errorResult, msg } from "./_shared.ts";
+import { errorResult, msg, okResult } from "./_shared.ts";
 
 export const skillToolName = "riffcast_skill";
 export const skillToolDescription =
@@ -25,12 +25,12 @@ export async function skillHandler(args: Args) {
   const skillMdPath = join(skillDir, "SKILL.md");
 
   if (mode === "path") {
-    return { content: [{ type: "text" as const, text: skillMdPath }] };
+    return okResult(skillMdPath);
   }
   if (mode === "content") {
     try {
       const text = await readFile(skillMdPath, "utf-8");
-      return { content: [{ type: "text" as const, text }] };
+      return okResult(text);
     } catch (err) {
       return errorResult(`failed to read ${skillMdPath}: ${msg(err)}`);
     }
@@ -39,7 +39,7 @@ export async function skillHandler(args: Args) {
     const refs = await listFilesRecursive(join(skillDir, "references"));
     const tmpls = await listFilesRecursive(join(skillDir, "templates"));
     const manifest = { skill_md: skillMdPath, references: refs, templates: tmpls };
-    return { content: [{ type: "text" as const, text: JSON.stringify(manifest, null, 2) }] };
+    return okResult(JSON.stringify(manifest, null, 2));
   } catch (err) {
     return errorResult(`failed to enumerate skill bundle at ${skillDir}: ${msg(err)}`);
   }

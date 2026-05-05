@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { isAbsolute, resolve } from "node:path";
 import { z } from "zod";
 import { parseBrief, renderAnimation } from "@riffcast/core";
-import { errorResult, msg } from "./_shared.ts";
+import { errorResult, msg, okResult } from "./_shared.ts";
 
 export const renderToolName = "riffcast_render";
 export const renderToolDescription =
@@ -50,9 +50,5 @@ export async function renderHandler(args: RenderArgs) {
       `render failed [${result.error.phase}/${result.error.code}]: ${result.error.message}`,
     );
   }
-  return {
-    content: [
-      { type: "text" as const, text: `Rendered to ${result.outputPath} in ${result.durationMs}ms` },
-    ],
-  };
+  return okResult(`Rendered to ${result.outputPath} in ${result.durationMs}ms`);
 }
