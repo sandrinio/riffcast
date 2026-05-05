@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+.pnp.*
+.yarn/
+
+# build artifacts
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# bun
+.bun/
+
+# env / secrets — NEVER COMMIT
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+bun-debug.log*
+
+# remotion / render scratch
+.remotion/
