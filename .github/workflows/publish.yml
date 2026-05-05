@@ -1,0 +1,67 @@
+name: Publish packages to npm
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish @riffcast/* packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ">=1.3.0"
+
+      - name: Setup Node (for npm registry auth)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install workspace dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Test
+        run: bun test
+
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish @riffcast/core
+        working-directory: packages/core
+        run: bun publish --access=public
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish @riffcast/skill
+        working-directory: packages/skill
+        run: bun publish --access=public
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish @riffcast/mcp
+        working-directory: packages/mcp
+        run: bun publish --access=public
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish @riffcast/cli
+        working-directory: packages/cli
+        run: bun publish --access=public
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

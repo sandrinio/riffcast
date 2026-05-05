@@ -1,10 +1,12 @@
 {
   "name": "@riffcast/mcp",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "type": "module",
   "description": "RiffCast MCP server — exposes plan/render/review as MCP tools over stdio.",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "riffcast-mcp": "./src/index.ts"
   },

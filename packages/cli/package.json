@@ -1,10 +1,12 @@
 {
   "name": "@riffcast/cli",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "type": "module",
   "description": "RiffCast CLI — `riffcast` command-line entry point.",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "riffcast": "./src/index.ts"
   },

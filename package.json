@@ -1,6 +1,6 @@
 {
   "name": "riffcast",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Plug a design skill into any AI agent — produce finished animations, decks, and infographics from a one-sentence brief. Code-driven, no GUI.",
